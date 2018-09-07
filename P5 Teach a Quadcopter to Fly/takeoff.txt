@@ -1,0 +1,46 @@
+Alyxion/Udacity_DeepLearningFoundationsNd
+rl quadcopter ipynb
+---take off        
+# Compute reward / penalty and check if this episode is complete
+        done = False
+        reward = -min(abs(self.target_z - pose.position.z), 20.0)/10.0  # reward = zero for matching target z, -ve as you go farther, upto -20
+        
+        if pose.position.z >= self.target_z:  # agent has crossed the target height
+            reward += 2.0  # bonus reward
+            done = True
+        elif timestamp > self.max_duration:  # agent has run out of time
+            reward -= 10.0  # extra penalty
+            done = True
+
+---hover
+# Compute reward / penalty and check if this episode is complete
+        done = False
+        
+        reward = -abs(pose.position.z - self.target_z)/5
+        
+        bonus_diff = 2
+        if abs(pose.position.z - self.target_z)<bonus_diff:  # agent is within bonus region? significantly increase reward
+            reward += 1.0  # bonus reward
+        
+        if timestamp > self.max_duration:  # agent has run out of time
+            done = True
+
+---land
+# Compute reward / penalty and check if this episode is complete
+        done = False
+        reward = 0.0
+        
+        optimum_position = self.start_z + (self.target_z - self.start_z)*timestamp/self.max_duration
+        
+        if abs(optimum_position-pose.position.z)<1.0:
+            reward += 1
+        else:
+            reward -= 1
+        
+        # increase reward in target region
+        if pose.position.z <= 0.5:  # agent has crossed the target height
+            reward += 2.0  # bonus reward
+            done = True
+            
+        if timestamp > self.max_duration:  # agent has run out of time
+            done = True
