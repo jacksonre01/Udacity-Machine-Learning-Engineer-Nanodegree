@@ -8,11 +8,11 @@ The purpose of this repository is to serve as a portfolio of my work associated 
 ## Project: Finding Donors for CharityML (Supervised Learning) 
 **Goal:** Evaluate and optimize several different supervised learners to determine which algorithm will provide the highest donation yield while also reducing the total number of letters being sent. **Tools Used:** scikit-learn, Python, MatplotLib, Seaborn, Pandas, Numpy
 
-## Project: Creating Customer Segments (Unsupervised Learning)
-**Goal:** use unsupervised learning techniques to see if any similarities exist between customers, and how to best segment customers into distinct categories. **Tools Used:** scikit-learn, MatplotLib, Seaborn, Pandas, Numpy, Regression
-
 ## Project: Dog Breed Claasifier (Deep Learning - Convolutional Neural Networks)
 **Goal:** Use a Convolutional Neural Networks (CNN) and build a pipeline to process real-world, user-supplied images. Given an image of a dog, create an algorithm to identify an estimate of the canine’s breed. If supplied an image of a human, the code will identify the resembling dog breed.**Tools Used:** Amazon Web Services, scikit-learn, Keras, MatplotLib, Seaborn, Pandas, Numpy. _**Note: This is a very large and performance intensive project which required the use of a AWS GPU-enabled server, and extremely large set of image data files.  The notebook file and code are viewable but the code is not executable within without the additional data files.**_
+
+## Project: Creating Customer Segments (Unsupervised Learning)
+**Goal:** use unsupervised learning techniques to see if any similarities exist between customers, and how to best segment customers into distinct categories. **Tools Used:** scikit-learn, MatplotLib, Seaborn, Pandas, Numpy, Regression
 
 ## Project: Teach a Quadcopter to Fly (Reinforcement Learning)
 **Goal:**  Design an agent that can fly a quadcopter, and then train it using a reinforcement learning algorithm.  The selected algorithm is Deep Deterministic Policy Gradients or DDPG and an actor-critic method. **Tools Used:** Amazon Web Services, scikit-learn, Keras, MatplotLib, Seaborn, Pandas, Numpy  
